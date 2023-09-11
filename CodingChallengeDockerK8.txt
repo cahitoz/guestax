@@ -1,5 +1,5 @@
  1. wie würde eine Logging Lösung in einem Kubernetes Umfeld aussehen?
-Alle Pods würden einen Sidecar kriegen, die das Logging in eine zentrale Umgebung kopieren.
+Alle Pods würden einen Sidecar kriegen, die das Logging in eine zentrale Umgebung kopieren. (Prometheus, AWS Cloudwatch)
 2. wie kann mit Kubernetes Boardmitteln sichergestellt werden, dass die Applikation mit einer hohen Anzahl an Requests auskomen.
 Deployment, Loadbalancer Replicas
 3.  wie kann man Fehler im Templating vor einem Deployment erkenen?
@@ -13,3 +13,27 @@ kubectl rollout undo deployment/nginx-deployment --to-revision=2
 6. welches CI/CD Tool wäre das Tool deiner Wahl
 GITHUB Action 
 AWS CodeCommit, CodeDeploy, Code Pipeline
+
+#
+
+7. wie stelle ich die Applikationen hinter einen Ingress Controller und wofür werden Ingress Controller verwe
+       backend:
+          service:
+            name: service1
+            port:
+              number: 80
+
+
+8. wie würde ein Alerting im Kubernetes Cluster aussehen? Welche Möglichkeiten gibt es
+Prometheus Alert Manager, Cloud watch Alerts
+
+9.welche Möglichkeiten gibt es die TSDB (Time-Series-Database) eines Prometheus
+Servers mit Metriken zu befüllen
+
+10. welche Möglichkeiten gibt es schützenswerte Daten wie z.B. Secrets in einem GIT
+Repository abzulegen und für welche würdest Du dich entscheiden?
+Hashi Corp Vault, AWS Secret Manager
+
+11. welche Möglichkeiten gibt es schützenswerte Daten die fälschlicherweise im Klartext im
+GIT Repository abgelegt wurden vollständig zu entfernen?
+Git Leaks, Git Secrets
