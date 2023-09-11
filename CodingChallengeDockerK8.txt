@@ -1,0 +1,15 @@
+ 1. wie würde eine Logging Lösung in einem Kubernetes Umfeld aussehen?
+Alle Pods würden einen Sidecar kriegen, die das Logging in eine zentrale Umgebung kopieren.
+2. wie kann mit Kubernetes Boardmitteln sichergestellt werden, dass die Applikation mit einer hohen Anzahl an Requests auskomen.
+Deployment, Loadbalancer Replicas
+3.  wie kann man Fehler im Templating vor einem Deployment erkenen?
+???
+4. Welche Möglichkeiten gibt es ein fehlgeschlagenes Deployment auf eine frühere Version zurückzusen.
+kubectl rollout history deployment/nginx-deployment
+kubectl rollout undo deployment/nginx-deployment
+kubectl rollout undo deployment/nginx-deployment --to-revision=2
+5.welche Metriken bietet die Demo Applikation an? 
+???
+6. welches CI/CD Tool wäre das Tool deiner Wahl
+GITHUB Action 
+AWS CodeCommit, CodeDeploy, Code Pipeline
